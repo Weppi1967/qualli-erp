@@ -1,0 +1,75 @@
+{
+  "_hinweis": "Formular-Konfiguration für Teilnehmer. Neue Felder einfach hier ergänzen - keine Datenbank-Migration nötig. Typen: text, textarea, email, tel, date, number, select, multiselect, boolean. 'aliases' = Spaltennamen im Qualli.life-Export für den automatischen Import.",
+  "sections": [
+    {
+      "id": "basic",
+      "storage": "basic_info",
+      "label": "👤 Personendaten",
+      "fields": [
+        {"name": "salutation", "label": "Anrede", "type": "select", "options": [
+          {"value": "frau", "label": "Frau"}, {"value": "herr", "label": "Herr"}, {"value": "divers", "label": "Divers"}, {"value": "keine", "label": "Keine Angabe"}
+        ], "aliases": ["anrede"]},
+        {"name": "first_name", "label": "Vorname", "type": "text", "required": true, "list": true, "aliases": ["vorname", "first name", "firstname"]},
+        {"name": "last_name", "label": "Nachname", "type": "text", "required": true, "list": true, "aliases": ["nachname", "name", "familienname", "last name", "lastname"]},
+        {"name": "birth_date", "label": "Geburtsdatum", "type": "date", "list": true, "aliases": ["geburtsdatum", "geb datum", "geboren am", "geburtstag"]},
+        {"name": "gender", "label": "Geschlecht", "type": "select", "options": [
+          {"value": "w", "label": "weiblich"}, {"value": "m", "label": "männlich"}, {"value": "d", "label": "divers"}, {"value": "k", "label": "keine Angabe"}
+        ], "aliases": ["geschlecht"]},
+        {"name": "nationality", "label": "Staatsangehörigkeit", "type": "text", "aliases": ["staatsangehoerigkeit", "nationalitaet"]},
+        {"name": "phone", "label": "Telefon", "type": "tel", "aliases": ["telefon", "telefonnummer", "tel", "mobil", "handy"]},
+        {"name": "email", "label": "E-Mail", "type": "email", "aliases": ["email", "e mail", "mail", "emailadresse"]},
+        {"name": "customer_number", "label": "Kundennummer (AA/JC)", "type": "text", "aliases": ["kundennummer", "kd nr", "kundennr", "bg nummer"]},
+        {"name": "cost_unit", "label": "Kostenträger", "type": "select", "options": [
+          {"value": "jobcenter", "label": "Jobcenter"}, {"value": "agentur", "label": "Agentur für Arbeit"}, {"value": "drv", "label": "Rentenversicherung"}, {"value": "selbstzahler", "label": "Selbstzahler"}, {"value": "sonstige", "label": "Sonstige"}
+        ], "aliases": ["kostentraeger", "traeger"]},
+        {"name": "contact_person", "label": "Ansprechpartner:in (Kostenträger)", "type": "text", "aliases": ["ansprechpartner", "vermittler", "pap"]}
+      ]
+    },
+    {
+      "id": "address",
+      "storage": "address_info",
+      "label": "🏠 Wohnort",
+      "fields": [
+        {"name": "street", "label": "Straße & Hausnummer", "type": "text", "aliases": ["strasse", "strasse hausnummer", "adresse", "anschrift"]},
+        {"name": "zip", "label": "PLZ", "type": "text", "pattern": "^[0-9]{5}$", "aliases": ["plz", "postleitzahl"]},
+        {"name": "city", "label": "Ort", "type": "text", "list": true, "aliases": ["ort", "wohnort", "stadt"]},
+        {"name": "district", "label": "Ortsteil", "type": "text", "aliases": ["ortsteil"]}
+      ]
+    },
+    {
+      "id": "characteristics",
+      "storage": "characteristics",
+      "label": "📋 Merkmale",
+      "fields": [
+        {"name": "school_degree", "label": "Schulabschluss", "type": "select", "options": [
+          {"value": "ohne", "label": "Ohne Abschluss"}, {"value": "foerderschule", "label": "Förderschulabschluss"}, {"value": "hauptschule", "label": "Hauptschulabschluss"}, {"value": "realschule", "label": "Mittlere Reife / Realschule"}, {"value": "fachabitur", "label": "Fachhochschulreife"}, {"value": "abitur", "label": "Abitur"}, {"value": "ausland", "label": "Ausländischer Abschluss"}
+        ], "aliases": ["schulabschluss", "schule"]},
+        {"name": "vocational_training", "label": "Berufsausbildung", "type": "text", "aliases": ["berufsausbildung", "ausbildung", "beruf"]},
+        {"name": "driving_license", "label": "Führerschein (Klassen)", "type": "multiselect", "options": [
+          {"value": "AM", "label": "AM"}, {"value": "A", "label": "A"}, {"value": "B", "label": "B"}, {"value": "BE", "label": "BE"}, {"value": "C", "label": "C"}, {"value": "CE", "label": "CE"}, {"value": "D", "label": "D"}, {"value": "L", "label": "L"}, {"value": "T", "label": "T"}, {"value": "Stapler", "label": "Staplerschein"}
+        ], "aliases": ["fuehrerschein", "fuehrerscheinklassen"]},
+        {"name": "own_vehicle", "label": "Eigenes Fahrzeug", "type": "boolean", "aliases": ["pkw vorhanden", "eigener pkw"]},
+        {"name": "marital_status", "label": "Familienstand", "type": "select", "options": [
+          {"value": "ledig", "label": "ledig"}, {"value": "verheiratet", "label": "verheiratet"}, {"value": "partnerschaft", "label": "eingetragene Partnerschaft"}, {"value": "getrennt", "label": "getrennt lebend"}, {"value": "geschieden", "label": "geschieden"}, {"value": "verwitwet", "label": "verwitwet"}
+        ], "aliases": ["familienstand"]},
+        {"name": "children", "label": "Anzahl Kinder", "type": "number", "min": 0, "aliases": ["kinder", "anzahl kinder"]},
+        {"name": "disability", "label": "Schwerbehinderung", "type": "select", "options": [
+          {"value": "nein", "label": "nein"}, {"value": "gleichgestellt", "label": "gleichgestellt"}, {"value": "ja", "label": "ja"}, {"value": "beantragt", "label": "beantragt"}
+        ], "aliases": ["behinderung", "schwerbehinderung"]},
+        {"name": "disability_degree", "label": "GdB", "type": "number", "min": 0, "max": 100, "aliases": ["gdb", "grad der behinderung"]},
+        {"name": "migration_background", "label": "Flucht-/Migrationshintergrund", "type": "select", "options": [
+          {"value": "nein", "label": "nein"}, {"value": "migration", "label": "Migrationshintergrund"}, {"value": "flucht", "label": "Fluchthintergrund"}
+        ], "aliases": ["migrationshintergrund", "fluchthintergrund"]},
+        {"name": "languages", "label": "Sprachkenntnisse", "type": "textarea", "aliases": ["sprachkenntnisse", "sprachen"]},
+        {"name": "german_level", "label": "Deutschniveau", "type": "select", "options": [
+          {"value": "muttersprache", "label": "Muttersprache"}, {"value": "C2", "label": "C2"}, {"value": "C1", "label": "C1"}, {"value": "B2", "label": "B2"}, {"value": "B1", "label": "B1"}, {"value": "A2", "label": "A2"}, {"value": "A1", "label": "A1"}
+        ], "aliases": ["deutschkenntnisse", "sprachniveau"]},
+        {"name": "qualifications", "label": "Qualifikationen", "type": "textarea", "aliases": ["qualifikationen", "zertifikate"]},
+        {"name": "strengths", "label": "Stärken", "type": "textarea", "aliases": ["staerken"]},
+        {"name": "weaknesses", "label": "Schwächen / Handlungsbedarfe", "type": "textarea", "aliases": ["schwaechen", "handlungsbedarf"]},
+        {"name": "work_experience", "label": "Arbeitserfahrung", "type": "textarea", "aliases": ["arbeitserfahrung", "berufserfahrung", "werdegang"]},
+        {"name": "notes", "label": "Bemerkungen", "type": "textarea", "aliases": ["bemerkung", "bemerkungen", "notiz", "notizen"]}
+      ]
+    }
+  ]
+}

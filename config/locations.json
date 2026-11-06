@@ -1,0 +1,12 @@
+{
+  "_hinweis": "Standorte des Profilingbüros Glaser. Adresse/Telefon bitte ergänzen. Im Prompt sind 7 Namen genannt (Bad Oeynhausen x2) bei '6 Standorten' - bitte prüfen und ggf. einen Eintrag entfernen. Änderungen werden beim nächsten Start übernommen (neue Namen werden angelegt, bestehende nie gelöscht).",
+  "locations": [
+    {"name": "Minden", "city": "Minden"},
+    {"name": "Lübbecke", "city": "Lübbecke"},
+    {"name": "Espelkamp", "city": "Espelkamp"},
+    {"name": "Bad Oeynhausen I", "city": "Bad Oeynhausen"},
+    {"name": "Bad Oeynhausen II", "city": "Bad Oeynhausen"},
+    {"name": "Porta Westfalica", "city": "Porta Westfalica"},
+    {"name": "Petershagen", "city": "Petershagen"}
+  ]
+}

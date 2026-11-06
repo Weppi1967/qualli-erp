@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Datenbank & lokale Daten (enthält Teilnehmerdaten – niemals committen!)
+instance/
+*.db
+*.sqlite
+.env
+
+# Desktop-App
+qualli-erp-desktop/node_modules/
+qualli-erp-desktop/dist/
+qualli-erp-desktop/out/
+
+# Importdateien
+imports/
+*.xlsx
+*.csv
